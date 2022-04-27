@@ -5,7 +5,7 @@ body {
   justify-content: center;
   min-height: 80vh;
   margin: 0;
-  background: #eee;
+  background: rgb(247, 247, 247);
 }
 
 .container {
@@ -15,6 +15,9 @@ body {
   margin: 50px auto 0 auto;
   padding: 50px 80px;
   width: 900px;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
 button {
@@ -28,13 +31,17 @@ button {
   border-radius: 8px;
 }
 
+button:hover {
+  border-color: rgb(171, 171, 171);
+}
+
 .btn-block {
-  display: inline-block;
-  border-right: 2px solid black;
+  float: left;
   padding: 5px 35px;
 }
 .results-block {
   display: inline-block;
+  border-left: 5px solid rgb(221, 221, 221);
   padding: 0px 15px;
 }
 
@@ -45,7 +52,8 @@ table {
 
 th {
   border-bottom: 1px solid black;
-  font-size: 24px;
+  color: rgb(65, 65, 65);
+  text-align: center;
 }
 
 td {
@@ -54,11 +62,11 @@ td {
 }
 
 .total-wealth {
-    background: rgb(255, 255, 227);
-    color: #1f1f1f;
-    margin: 20px 5px;
-    padding: 3px 4px;
-    text-align: right;
-    font-size: 26px;
-    font-weight: bold;
+  background: rgb(255, 255, 227);
+  color: #1f1f1f;
+  margin: 20px 5px;
+  padding: 3px 4px;
+  text-align: right;
+  font-size: 26px;
+  font-weight: bold;
 }
