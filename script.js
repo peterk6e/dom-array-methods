@@ -4,6 +4,7 @@ const addBtn = document.getElementById("add-btn");
 const doubleBtn = document.getElementById("double-btn");
 const showMillionairesBtn = document.getElementById("million-btn");
 const calculateWealthBtn = document.getElementById("wealth-total-btn");
+const sortRichestBtn = document.getElementById('richest-btn');
 const totalWealth = document.getElementById("total-wealth");
 
 const baseUrl =
@@ -95,8 +96,16 @@ function calculateWealth() {
   userTable.appendChild(totalWealth);
 }
 
+// sort by richest
+function sortByRichest() {
+    usersArray.sort((a,b) => b.money - a.money);
+    displayUsers();
+  }
+
 // event listeners
 addBtn.addEventListener("click", createUser);
 doubleBtn.addEventListener("click", doubleMoney);
 showMillionairesBtn.addEventListener("click", showMillionaires);
 calculateWealthBtn.addEventListener("click", calculateWealth);
+sortRichestBtn.addEventListener("click", sortByRichest);
+
