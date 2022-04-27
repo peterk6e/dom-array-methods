@@ -1,8 +1,11 @@
 //DOM elements
+const userTable = document.getElementById("user-table");
 const addBtn = document.getElementById("add-btn");
 const doubleBtn = document.getElementById("double-btn");
 const showMillionairesBtn = document.getElementById("million-btn");
 const calculateWealthBtn = document.getElementById("wealth-total-btn");
+const totalWealth = document.getElementById("total-wealth");
+
 const baseUrl =
   "https://lit-earth-42250.herokuapp.com/https://randomuser.me/api";
 var usersArray = [];
@@ -33,7 +36,7 @@ function displayUsers() {
     text += `<td> $ ` + person.money + ` </td></tr>`;
   });
   text += "</table>";
-  document.getElementById("myTable").innerHTML = text;
+  userTable.innerHTML = text;
 }
 
 function createUser() {
@@ -56,7 +59,7 @@ function createUser() {
 
 //add data in users array
 function addData(arr) {
-  arr.forEach(value => {
+  arr.forEach((value) => {
     let user = {
       name: value.name.first + " " + value.name.last,
       money: Math.floor(Math.random() * 1000000),
@@ -70,7 +73,6 @@ function addData(arr) {
 // Double money
 function doubleMoney() {
   usersArray = usersArray.map((user) => {
-      alert(user.money);
     return { ...user, money: user.money * 2 };
   });
   displayUsers();
@@ -84,8 +86,13 @@ function showMillionaires() {
 
 // Calculate the total wealth
 function calculateWealth() {
-  //
-  displayUsers();
+  const wealth = usersArray.reduce((acc, user) => (acc += user.money), 0);
+
+  const totalWealth = document.createElement("div");
+  totalWealth.className = "total-wealth";
+  totalWealth.innerHTML = "Total : $" + wealth;
+
+  userTable.appendChild(totalWealth);
 }
 
 // event listeners

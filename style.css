@@ -52,3 +52,13 @@ td {
   border-bottom: 5px solid white;
   padding: 8px;
 }
+
+.total-wealth {
+    background: rgb(255, 255, 227);
+    color: #1f1f1f;
+    margin: 20px 5px;
+    padding: 3px 4px;
+    text-align: right;
+    font-size: 26px;
+    font-weight: bold;
+}
